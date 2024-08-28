@@ -6,6 +6,19 @@
     <title>Página Inicial</title>
 </head>
 <body>
-    <h1>Minha página inicial</h1>
+    <h1>Meus produtos</h1>
+    <ul>
+        {% for produto in produtos %}
+            <li>{{ produto }}</li>
+        {% empty %}
+            <p>Nenhum produto cadastrado</p>
+        {% endfor %}
+
+        <p>Cadastrar novo produto</p>
+
+    </ul>
+    <a href="{% url 'usuarios:logout' %}">
+        <button>Sair</button>
+    </a>
 </body>
 </html>
